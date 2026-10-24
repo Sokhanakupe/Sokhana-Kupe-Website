@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sokhana Kupe · Digital Marketing Specialist</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9fafc;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #334155;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #1e293b;
+      border: 1.5px solid #cbd5e1;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      box-shadow: none;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 3.5rem 0 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1 1 350px;
+    }
+
+    .hero-content .badge {
+      background: #dbeafe;
+      color: #1e40af;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 1.2rem;
+    }
+
+    .highlight {
+      color: #2563eb;
+      border-bottom: 3px solid #93c5fd;
+      display: inline-block;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #475569;
+      margin-bottom: 2rem;
+      max-width: 550px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      flex: 1 1 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-card {
+      background: linear-gradient(145deg, #ffffff, #f1f5f9);
+      width: 280px;
+      height: 280px;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+      transition: transform 0.25s;
+    }
+
+    .avatar-card:hover {
+      transform: scale(1.02);
+    }
+
+    .avatar-initials {
+      font-size: 5rem;
+      font-weight: 700;
+      color: #1e293b;
+      letter-spacing: -0.02em;
+      background: #e2e8f0;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      box-shadow: inset 0 -4px 8px rgba(0,0,0,0.02), 0 12px 18px -8px rgba(0,0,0,0.1);
+      color: #1e3a8a;
+    }
+
+    .avatar-card .title {
+      font-weight: 600;
+      color: #0f172a;
+      font-size: 1.15rem;
+    }
+
+    .avatar-card .sub {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* section titles */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .section-sub {
+      color: #475569;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 1.2rem 1rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e9eef3;
+      text-align: center;
+      transition: all 0.2s;
+      font-weight: 500;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-card i {
+      font-size: 1.8rem;
+      color: #2563eb;
+      margin-bottom: 0.2rem;
+    }
+
+    .skill-card:hover {
+      border-color: #bdd3ff;
+      box-shadow: 0 12px 20px -10px rgba(37, 99, 235, 0.15);
+      transform: translateY(-3px);
+    }
+
+    /* traditional marketing strip */
+    .trad-marketing {
+      background: #f1f5f9;
+      border-radius: 40px;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .trad-icon {
+      background: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #2563eb;
+      box-shadow: 0 10px 15px -8px rgba(0,0,0,0.1);
+    }
+
+    .trad-text {
+      flex: 1;
+    }
+
+    .trad-text h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .trad-text p {
+      color: #334155;
+      font-size: 1.05rem;
+    }
+
+    .trad-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .trad-badges span {
+      background: white;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e293b;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #dee5ed;
+    }
+
+    /* interests / CTA */
+    .cta-box {
+      background: #0f172a;
+      border-radius: 40px;
+      padding: 3rem 2.5rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .cta-box h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: white;
+      max-width: 500px;
+    }
+
+    .cta-box p {
+      color: #cbd5e1;
+      max-width: 480px;
+      margin-top: 0.6rem;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: #0f172a;
+      box-shadow: none;
+    }
+
+    .cta-box .btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* footer */
+    .footer {
+      padding: 2rem 0 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    .footer .social a {
+      color: #64748b;
+      margin-left: 1.2rem;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+
+    .footer .social a:hover {
+      color: #2563eb;
+    }
+
+    /* modal (simple alert for demo) - hidden */
+    .hidden {
+      display: none;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 2rem;
+      }
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .cta-box {
+        padding: 2rem 1.5rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .trad-marketing {
+        flex-direction: column;
+        text-align: center;
+      }
+      .trad-badges {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- navigation -->
+    <nav class="navbar">
+      <div class="logo">Sokhana<span>.</span></div>
+      <div class="nav-links">
+        <a href="#skills">Expertise</a>
+        <a href="#traditional">Traditional</a>
+        <a href="#connect">Connect</a>
+      </div>
+      <a href="#connect" class="btn btn-outline" style="padding: 0.5rem 1.4rem;">Let's talk</a>
+    </nav>
+
+    <!-- hero section -->
+    <header class="hero">
+      <div class="hero-content">
+        <span class="badge"><i class="fas fa-bullseye" style="margin-right: 6px;"></i>Digital Marketing Specialist</span>
+        <h1>Turning data into <span class="highlight">growth</span> & meaningful engagement</h1>
+        <p>I'm Sokhana Kupe — I blend analytics, paid media and creative storytelling to build campaigns that perform. From Meta Business Suite to Looker Studio, I make data actionable.</p>
+        <div class="hero-actions">
+          <a href="#connect" class="btn">Work with me <i class="fas fa-arrow-right" style="margin-left: 6px;"></i></a>
+          <a href="#skills" class="btn btn-outline">Explore expertise</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-card">
+          <div class="avatar-initials">SK</div>
+          <div class="title">Sokhana Kupe</div>
+          <div class="sub">Digital · Data · Creative</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- skills / expertise section -->
+    <section id="skills">
+      <h2 class="section-title">Digital toolkit & platforms</h2>
+      <p class="section-sub">Hands-on expertise in the tools that drive modern marketing performance.</p>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-meta"></i>Meta Business Suite</div>
+        <div class="skill-card"><i class="fas fa-chart-line"></i>Google Analytics</div>
+        <div class="skill-card"><i class="fas fa-chart-pie"></i>Looker Studio</div>
+        <div class="skill-card"><i class="fas fa-table"></i>Tableau</div>
+        <div class="skill-card"><i class="fas fa-seedling"></i>Sprout Social</div>
+        <div class="skill-card"><i class="fas fa-code-branch"></i>DataEQ</div>
+      </div>
+    </section>
+
+    <!-- traditional marketing experience -->
+    <section id="traditional" class="trad-marketing">
+      <div class="trad-icon"><i class="fas fa-billboard"></i></div>
+      <div class="trad-text">
+        <h3>Beyond digital: traditional & experiential</h3>
+        <p>I've worked on the ground — sourcing billboard placements, filming adverts on set, and assisting with activations for experiential marketing campaigns. That hands‑on experience gives me a holistic view of brand storytelling.</p>
+        <div class="trad-badges">
+          <span><i class="fas fa-map-pin" style="margin-right: 5px;"></i>Billboard sourcing</span>
+          <span><i class="fas fa-video" style="margin-right: 5px;"></i>On‑set advert filming</span>
+          <span><i class="fas fa-users" style="margin-right: 5px;"></i>Experiential activations</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / connect -->
+    <section id="connect" class="cta-box">
+      <div>
+        <h2>Ready for a new challenge — and to add real value.</h2>
+        <p>I'm interested in exploring new opportunities with a team where I can contribute, learn, and drive results for the customers we serve. Let's connect.</p>
+      </div>
+      <div>
+        <a href="mailto:sokhanakupe@gmail.com"></a>
+        <button class="btn" id="contactBtn" style="font-size: 1rem; padding: 0.9rem 2rem;"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Say hello</button>
+      </a>
+    </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div>© 2025 Sokhana Kupe · Digital Marketing Specialist</div>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- micro javascript (interactivity) -->
+  <script>
+    (function() {
+      // Smooth scrolling for anchor links (already via CSS, but we add offset for sticky? not needed)
+      // You can add more refined behavior if needed.
+
+      // Contact button - simple friendly interaction
+      const contactBtn = document.getElementById('contactBtn');
+      if (contactBtn) {
+        contactBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          // In a real scenario this would open a contact form or link to email.
+          // For this demo we show a friendly toast-like message (alert).
+          alert("Thanks for reaching out! I'll get back to you shortly. (This is a demo interaction.)");
+        });
+      }
+
+      // Make the social icons in footer behave as demo links
+      const socialLinks = document.querySelectorAll('.social a');
+      socialLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          // Optional: alert for demo
+          // alert('Social link placeholder — connect with Sokhana on LinkedIn.');
+          // Let's just show a subtle message without being annoying
+          console.log('Social link clicked (demo)');
+        });
+      });
+
+      // Optional: hover effect on skill cards already via CSS; maybe log nothing.
+      // Update current year dynamically if needed (already static 2025, but we can auto‑update)
+      const yearSpan = document.querySelector('.footer div:first-child');
+      if (yearSpan) {
+        const currentYear = new Date().getFullYear();
+        // preserve text: replace 2025 with current year if it exists
+        yearSpan.innerHTML = yearSpan.innerHTML.replace('2025', currentYear);
+      }
+    })();
+  </script>
+  <!-- Note: All content matches the professional summary provided: Meta Business Suite, Google Analytics, Looker Studio, Tableau, Sprout Social, DataEQ; traditional marketing (billboards, adverts on set, experiential activations); interest in new challenges and adding value. -->
+  <!-- Design intention: clean, modern, trustworthy — suitable for a digital marketing specialist. -->
+</body>
+</html>
